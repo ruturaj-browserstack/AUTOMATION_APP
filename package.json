@@ -1,0 +1,19 @@
+{
+  "name": "product-automation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WebdriverIO + Mocha regression tests for the Product app",
+  "type": "module",
+  "scripts": {
+    "test": "wdio run ./wdio.conf.js",
+    "test:regression": "wdio run ./wdio.conf.js --suite regression",
+    "test:smoke": "wdio run ./wdio.conf.js --suite smoke"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^9.2.8",
+    "@wdio/local-runner": "^9.2.8",
+    "@wdio/mocha-framework": "^9.2.8",
+    "@wdio/spec-reporter": "^9.2.8",
+    "chai": "^5.1.2"
+  }
+}

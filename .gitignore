@@ -1,0 +1,5 @@
+node_modules
+logs
+.logs
+allure-results
+.DS_Store
