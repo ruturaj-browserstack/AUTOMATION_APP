@@ -21,8 +21,15 @@ class TodosPage {
 
   async toggle(title) {
     const item = this.itemByTitle(title);
-    const checkbox = item.$('input[type="checkbox"]');
-    await checkbox.click();
+    const wasCompleted = ((await item.getAttribute('class')) || '').includes('completed');
+    await item.$('input[type="checkbox"]').click();
+    await browser.waitUntil(
+      async () => {
+        const cls = (await this.itemByTitle(title).getAttribute('class')) || '';
+        return cls.includes('completed') !== wasCompleted;
+      },
+      { timeout: 10_000, timeoutMsg: `Todo "${title}" toggle did not propagate` }
+    );
   }
 
   async delete(title) {
