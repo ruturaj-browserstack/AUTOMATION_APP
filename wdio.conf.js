@@ -10,6 +10,8 @@ export const config = {
       './test/specs/login.spec.js',
       './test/specs/todo.spec.js',
       './test/specs/counter.spec.js',
+      './test/specs/clear-completed.spec.js',
+      './test/specs/search.spec.js',
     ],
   },
   maxInstances: 1,
